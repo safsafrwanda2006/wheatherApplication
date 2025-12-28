@@ -16,7 +16,7 @@ body{
 }
 .card{
     width: 90%;
-    max-width: 700px;
+    max-width: 600px;
     background: linear-gradient(110deg,#00feba,#5b548a);
     color: #fff;
     margin: 100px auto 0;
@@ -29,25 +29,26 @@ text-align: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    background-color: white;
+    border-radius: 10px;
+    height: 40px;
 }
 .search input{
     border: 0;
     outline: 0;
     background-color: #ebfffc;
     color: black;
-    padding: 10px 25px;
-    height: 60px;
+    padding: 5px 40px 5px 10px;
+    height: 30px;
     border-radius: 30px;
     flex: 1;
-    margin-right: 16px;
     font-size: 18px;
 }
 button{
     border: 0;
     outline: 0;
-    height: 60px;
-    width: 60px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -55,7 +56,6 @@ button{
 button:hover{
     transform: scale(1.09);
     background-color: #3bb9d8;
-    transform: rotate(360deg);
 }
 .weather img{
     margin-top: 70px;
@@ -109,6 +109,47 @@ margin-top: -6px;
     display: none;
 }
 
+
+
+@media (max-width:800px) {
+    .search{
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 10% 0px 0;
+    position: relative;
+
+}
+.search input{
+    border: 0;
+    outline: 0;
+    background-color: #ebfffc;
+    color: black;
+    padding: 0px 10px;
+    height: 30px;
+    border-radius: 30px;
+    flex: 1;
+    width: 80%;
+    font-size: 18px;
+}
+.search button{
+    background-color: rgba(255,255,255,0);
+    margin: 10px;
+}
+.card{
+    width: 90%;
+    max-width: 400px;
+    background: linear-gradient(110deg,#00feba,#5b548a);
+    color: #fff;
+    margin: 50px auto 0;
+    border-radius: 20px;
+padding: 20px 15px;
+text-align: center; 
+
+}
+}
+
     </style>
 </head>
 <body>
@@ -123,12 +164,12 @@ margin-top: -6px;
             <p>Invaled city name</p>
         </div>
     <div class="weather">
-        <img src="Icons/cloudy-day.png" class="weather-icon">
+        <img src="cloudy-day.png" class="weather-icon">
         <h1 class="temp">22 °c</h1>
         <h2 class="city">New Yourk</h2>
         <div class="details">
             <div class="col">
-                <img src="Icons/humidity.png"  class="bottomicons" >
+                <img src="humidity.png"  class="bottomicons" >
                 <div>
                     <p class="humidity">50%</p>
                     <p>Humidity</p>
@@ -136,7 +177,7 @@ margin-top: -6px;
             </div>
 
              <div class="col">
-                <img src="Icons/wind.png" class="bottomicons">
+                <img src="wind.png" class="bottomicons">
                 <div>
                     <p class="wind">15 km/h</p>
                     <p>Wind Speed</p>
@@ -171,19 +212,19 @@ document.querySelector(".weather").style.display="none";
        document.querySelector(".wind").innerHTML=data.wind.speed+" km/h";
 
        if(data.weather[0].main=="Clouds"){
-        weatherIcon.src="Icons/clouds.png";
+        weatherIcon.src="clouds.png";
        }
        else if(data.weather[0].main=="Clear"){
-        weatherIcon.src="Icons/clear-sky.png";
+        weatherIcon.src="clear-sky.png";
        }
        else if(data.weather[0].main=="Rain"){
-        weatherIcon.src="Icons/rainy-day.png"; 
+        weatherIcon.src="rainy-day.png"; 
        }
        else if(data.weather[0].main=="Drizzle"){
-weatherIcon.src="Icons/sunny.png";
+weatherIcon.src="sunny.png";
        }
        else if(data.weather[0].main=="Mist"){
-        weatherIcon.src="Icons/snowy.png";
+        weatherIcon.src="snowy.png";
        }
 
        document.querySelector(".weather").style.display="block";
